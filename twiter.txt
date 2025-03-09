@@ -1,0 +1,13 @@
+cam.vdhiep1@gmail.com-twiter
+Bearer Token
+AAAAAAAAAAAAAAAAAAAAANuHtgEAAAAADQZHk9MWC%2BN7FSzVBtBSxPuMyqc%3DUHf8v39jKBEBGlayOMwyevPSdyYj1WgikpicYMisMMmw1351Wn
+acess token
+1782086214709129216-tPhT4EKi5IN28g12qgGuBZakfCoHzn
+token secret
+X2D3gdHj7f2kgHPYxq0b3zWNYzhaWiskPAazJxUE1aMXV
+
+API Key
+lqFsjmtZTPaYy3jSkWq04Jfe8
+API Key Secret
+S8OqX8KiiLhJCrWBCWYZZKPSMVZKnzbefEgplj2C7XB1H0Jgyq
+
