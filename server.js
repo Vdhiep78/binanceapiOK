@@ -6,6 +6,8 @@ const TelegramBot = require('node-telegram-bot-api');
 //import { TwitterApi } from 'twitter-api-v2';
 const { TwitterApi } = require('twitter-api-v2');
 var app = express();
+var cors = require('cors')
+
 port=3001
 app.listen(port,()=>{
     // res.json({servers:"server running..."});
@@ -13,14 +15,28 @@ app.listen(port,()=>{
 });
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
+// const corsOptions ={
+//     origin:'http://localhost:8081', 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 
-app.use(function(req,res, next){
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.setHeader("Access-Controle-Allow-Methods", "GET, POST");
-    next();
-});
+// app.use(function(req,res, next){
+//     res.setHeader("Access-Control-Allow-Origin", "*" );
+//     res.setHeader("Access-Controle-Allow-Methods", "GET, POST");
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type", "Authorization")
+//     next();
+// });
 
+const corsOptions ={
+    origin:'http://localhost:3000'||'http://localhost:8081', 
+    credentials:false,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
+//app.use(cors());
 //=========================================
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '6932896135:AAGiLsANuuBWOPKlkJdiOyC3MJR0-yju8vI';
@@ -713,7 +729,7 @@ app.post("/balance3", function(req, res){
 });
 app.post("/balance4", function(req, res){
     try{
-        res.json({servers:true, prices:"OK Post 4"});
+        res.json("OK Post 4");
         console.log("post balance4 đã xử lý ok!");
         //console.log(res);
     }

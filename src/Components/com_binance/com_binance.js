@@ -173,6 +173,7 @@ class BinanceCom extends Component{
     updatePrice(){
         axios.post("http://localhost:3001/balance2")
         .then(res=>{
+            //console.log(res);
             this.setState({arrPrice:res.data.prices});
         })
         .catch(err=>console.log('updatePrice'+err))
