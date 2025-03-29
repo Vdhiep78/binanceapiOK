@@ -28,10 +28,17 @@ app.use(bodyParser.urlencoded({extended:false}));
 //     res.setHeader("Access-Control-Allow-Headers", "Content-Type", "Authorization")
 //     next();
 // });
-
+//123.23.23.23
+const whitelist = ['http://127.0.0.1:5554','http://192.168.1.33:5554','http://192.168.1.102:8081','http://192.168.1.33:8081','http://localhost:3000', 'http://localhost:8081', 'http://localhost:5554'];
 const corsOptions ={
-    origin:'http://localhost:3000'||'http://localhost:8081', 
-    credentials:false,            //access-control-allow-credentials:true
+     origin: (origin, callback) => {
+         if (whitelist.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+     },
+    credentials:true, //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
